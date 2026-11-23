@@ -1,0 +1,5 @@
+item_code,item_description,current_revision,bom_reference,product_family,uom
+ITM-A210,Hydraulic Pump Assembly,REV-C,BOM-P210-C,Assembly,EA
+ITM-A220,Hydraulic Pump Assembly Plus,REV-B,BOM-P220-B,Assembly,EA
+ITM-V310,Control Valve Module,REV-D,BOM-V310-D,Assembly,EA
+ITM-V320,Control Valve Module Pro,REV-A,BOM-V320-A,Assembly,EA

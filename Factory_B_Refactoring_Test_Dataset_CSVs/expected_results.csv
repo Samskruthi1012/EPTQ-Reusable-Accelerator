@@ -1,0 +1,5 @@
+ecn_id,product_id,target_revision,effective_date,expected_traceability,expected_quality_behavior,test_purpose
+CHG-26-041,ITM-A210,REV-C,2026-09-15,Orders on/after effective date using REV-C and BOM-P210-C,Quality trend should generally improve vs REV-B,Primary refactoring validation
+CHG-26-052,ITM-V310,REV-D,2026-09-22,Orders on/after effective date using REV-D and BOM-V310-D,Quality trend should generally worsen slightly; vibration also rises,"Tests correlation, not causation"
+CHG-26-061,ITM-A220,REV-B,2026-10-03,Orders on/after effective date using REV-B and BOM-P220-B,No guaranteed quality direction,Tests another schema-mapped ECN
+CHG-26-074,ITM-V320,REV-B,2026-10-18,Should NOT affect production because status is PENDING and orders remain REV-A,No post-change comparison expected,Critical negative test

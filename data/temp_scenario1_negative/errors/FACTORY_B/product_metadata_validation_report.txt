@@ -1,0 +1,9 @@
+Factory: FACTORY_B
+Dataset: product_metadata
+Validation stage: Source schema
+Status: Failed
+Missing required columns: item_code
+Available columns: bom_reference, current_revision, item_description, product_family, uom
+
+Validation errors:
+- product_metadata: Missing required source columns: ['item_code']

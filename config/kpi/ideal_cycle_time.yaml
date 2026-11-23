@@ -1,0 +1,99 @@
+
+# EPTQ ideal-cycle-time configuration.
+# Factory A uses an assumed synthetic demonstration baseline.
+# Factory B values are provisional historical run-time-per-unit baselines.
+# None of these values are approved engineering standards.
+
+configuration:
+  name: ideal_cycle_time
+  version: 2
+  unit: milliseconds
+  require_approved: false
+
+  resolution_order:
+    - operation+product+machine
+    - product+machine
+    - product+operation
+    - machine+operation
+    - operation
+    - product
+    - machine
+    - factory
+
+  governance_fields:
+    - source
+    - owner
+    - effective_from
+    - effective_to
+    - version
+    - status
+    - approved_by
+    - approved_at
+
+rules:
+
+  # Factory A - provisional factory-level baseline
+  - rule_id: FACTORY_A_FACTORY_BASELINE_V1
+    factory_id: FACTORY_A
+    ideal_cycle_time_ms: 1500
+    source: assumed_synthetic_demonstration_baseline
+    owner: EPTQ accelerator team
+    effective_from: '2025-01-01'
+    effective_to: null
+    version: 1
+    status: provisional
+    approved_by: null
+    approved_at: null
+
+  # Factory B - product-specific provisional baselines
+  - rule_id: FACTORY_B_ITM_A210_BASELINE_V1
+    factory_id: FACTORY_B
+    product_id: ITM-A210
+    ideal_cycle_time_ms: 203500
+    source: factory_b_historical_order_duration_proxy
+    owner: EPTQ accelerator team
+    effective_from: '2026-09-08'
+    effective_to: null
+    version: 1
+    status: provisional
+    approved_by: null
+    approved_at: null
+
+  - rule_id: FACTORY_B_ITM_A220_BASELINE_V1
+    factory_id: FACTORY_B
+    product_id: ITM-A220
+    ideal_cycle_time_ms: 189333.333333
+    source: factory_b_historical_order_duration_proxy
+    owner: EPTQ accelerator team
+    effective_from: '2026-09-08'
+    effective_to: null
+    version: 1
+    status: provisional
+    approved_by: null
+    approved_at: null
+
+  - rule_id: FACTORY_B_ITM_V310_BASELINE_V1
+    factory_id: FACTORY_B
+    product_id: ITM-V310
+    ideal_cycle_time_ms: 164000
+    source: factory_b_historical_order_duration_proxy
+    owner: EPTQ accelerator team
+    effective_from: '2026-09-08'
+    effective_to: null
+    version: 1
+    status: provisional
+    approved_by: null
+    approved_at: null
+
+  - rule_id: FACTORY_B_ITM_V320_BASELINE_V1
+    factory_id: FACTORY_B
+    product_id: ITM-V320
+    ideal_cycle_time_ms: 153090.909091
+    source: factory_b_historical_order_duration_proxy
+    owner: EPTQ accelerator team
+    effective_from: '2026-09-08'
+    effective_to: null
+    version: 1
+    status: provisional
+    approved_by: null
+    approved_at: null

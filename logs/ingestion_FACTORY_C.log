@@ -1,0 +1,24 @@
+2026-11-19 12:47:26,228 - INFO - Starting EPTQ pipeline for FACTORY_C
+2026-11-19 12:47:26,229 - INFO - Processing dataset: product_metadata
+2026-11-19 12:47:26,294 - WARNING - product_metadata: Optional standard fields not present: ['cad_file_reference', 'design_release_date']
+2026-11-19 12:47:26,426 - INFO - Successfully processed product_metadata. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_C\product_metadata.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_C\product_metadata.parquet
+2026-11-19 12:47:26,426 - INFO - Processing dataset: bom
+2026-11-19 12:47:26,455 - WARNING - bom: Optional standard fields not present: ['component_revision']
+2026-11-19 12:47:26,460 - WARNING - bom: Unexpected standardized fields: ['source_record_id']
+2026-11-19 12:47:26,463 - INFO - Successfully processed bom. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_C\bom.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_C\bom.parquet
+2026-11-19 12:47:26,463 - INFO - Processing dataset: engineering_changes
+2026-11-19 12:47:26,493 - WARNING - engineering_changes: Optional standard fields not present: ['change_type', 'request_date']
+2026-11-19 12:47:26,496 - INFO - Successfully processed engineering_changes. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_C\engineering_changes.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_C\engineering_changes.parquet
+2026-11-19 12:47:26,496 - INFO - Processing dataset: production_orders
+2026-11-19 12:47:26,499 - WARNING - production_orders: Unexpected extra source columns: ['operator_badge']
+2026-11-19 12:47:26,525 - WARNING - production_orders: Optional standard fields not present: ['actual_quantity']
+2026-11-19 12:47:26,529 - INFO - Successfully processed production_orders. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_C\production_orders.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_C\production_orders.parquet
+2026-11-19 12:47:26,529 - INFO - Processing dataset: machine_logs
+2026-11-19 12:47:26,585 - WARNING - machine_logs: Optional standard fields not present: ['cycle_time_ms', 'defect_flag', 'output_count']
+2026-11-19 12:47:26,585 - WARNING - machine_logs: Unexpected standardized fields: ['source_record_id']
+2026-11-19 12:47:26,589 - INFO - Successfully processed machine_logs. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_C\machine_logs.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_C\machine_logs.parquet
+2026-11-19 12:47:26,590 - INFO - Processing dataset: downtime_events
+2026-11-19 12:47:26,622 - INFO - Successfully processed downtime_events. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_C\downtime_events.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_C\downtime_events.parquet
+2026-11-19 12:47:26,622 - INFO - Processing dataset: quality_events
+2026-11-19 12:47:26,646 - INFO - Successfully processed quality_events. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_C\quality_events.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_C\quality_events.parquet
+2026-11-19 12:47:26,646 - INFO - EPTQ pipeline completed for FACTORY_C. Summary: {'factory_id': 'FACTORY_C', 'processed': 7, 'failed': 0, 'skipped': 0, 'valid_records': 685, 'invalid_records': 0}

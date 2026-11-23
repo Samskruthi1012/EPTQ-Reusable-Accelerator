@@ -1,0 +1,12 @@
+Factory: FACTORY_B
+Adapter: src.transform.adapters.factory_b_adapter
+Orders processed: 64
+Complete OEE rows: 64
+Partial KPI rows: 0
+Provisional ideal-cycle-time rows: 64
+Performance > 100% rows: 30
+OEE > 100% rows: 5
+Factory KPI summary:
+ order_count  complete_oee_order_count  planned_time_ms  operating_time_ms  downtime_ms  total_output  good_quantity  availability  performance  quality      oee
+          64                        64     1637400000.0       1591860000.0   45540000.0        9120.0         8801.0      0.972188     1.003505 0.965022 0.941471
+Adapter warnings:

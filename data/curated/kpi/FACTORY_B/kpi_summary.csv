@@ -1,0 +1,2 @@
+order_count,complete_oee_order_count,planned_time_ms,operating_time_ms,downtime_ms,total_output,good_quantity,availability,performance,quality,oee
+64,64,1637400000.0,1591860000.0,45540000.0,9120.0,8801.0,0.9721876145108098,1.0035053333832873,0.9650219298245614,0.9414710098805935

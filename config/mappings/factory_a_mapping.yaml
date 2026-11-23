@@ -1,0 +1,216 @@
+#This tells the mapping engine how Factory A's columns correspond to standard EPTQ fields.
+factory_id: "FACTORY_A"
+
+datasets:
+
+  machine_logs:
+    mappings:
+      - source_field: timestamp
+        target_field: event_timestamp
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: machine_id
+        target_field: machine_id
+        data_type: string
+        rule: identity
+
+      - source_field: status
+        target_field: machine_state
+        data_type: string
+        rule: identity
+
+      - source_field: cycle_time_ms
+        target_field: cycle_time_ms
+        data_type: float
+        rule: identity
+
+      - source_field: output_count
+        target_field: output_count
+        data_type: integer
+        rule: identity
+
+      - source_field: defect_flag
+        target_field: defect_flag
+        data_type: boolean
+        rule: identity
+
+      - source_field: production_order_id
+        target_field: production_order_id
+        data_type: string
+        rule: identity
+
+      - source_field: rejected_quantity
+        target_field: rejected_quantity
+        data_type: integer
+        rule: identity
+
+    generated_fields:
+      - target_field: source_record_id
+        rule: deterministic_row_id
+
+  production_orders:
+    mappings:
+      - source_field: order_id
+        target_field: production_order_id
+        data_type: string
+        rule: identity
+
+      - source_field: product_id
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: start_time
+        target_field: start_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: end_time
+        target_field: end_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: planned_qty
+        target_field: planned_quantity
+        data_type: integer
+        rule: identity
+
+      - source_field: actual_qty
+        target_field: actual_quantity
+        data_type: integer
+        rule: identity
+
+      - source_field: machine_id
+        target_field: machine_id
+        data_type: string
+        rule: identity
+
+  downtime_events:
+    mappings:
+      - source_field: event_id
+        target_field: downtime_event_id
+        data_type: string
+        rule: identity
+
+      - source_field: machine_id
+        target_field: machine_id
+        data_type: string
+        rule: identity
+
+      - source_field: start_time
+        target_field: start_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: end_time
+        target_field: end_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: reason_code
+        target_field: downtime_reason
+        data_type: string
+        rule: identity
+
+      - source_field: production_order_id
+        target_field: production_order_id
+        data_type: string
+        rule: identity
+
+  bom:
+    mappings:
+      - source_field: product_id
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: component_id
+        target_field: component_id
+        data_type: string
+        rule: identity
+
+      - source_field: quantity
+        target_field: quantity
+        data_type: float
+        rule: identity
+
+      - source_field: component_version
+        target_field: component_revision
+        data_type: string
+        rule: identity
+
+    generated_fields:
+      - target_field: source_record_id
+        rule: deterministic_row_id
+#(Why are we adding this?
+# - Factory A does not provide a BOM ID.
+# - source_record_id gives each BOM component row an identifier.
+# - component_version represents the component revision, not the product revision.
+# - We retain the original source fields without inventing missing information.)
+
+  product_metadata:
+    mappings:
+      - source_field: product_id
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: product_name
+        target_field: product_name
+        data_type: string
+        rule: identity
+
+      - source_field: design_release_date
+        target_field: design_release_date
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: CAD_file_ref
+        target_field: cad_file_reference
+        data_type: string
+        rule: identity
+
+  engineering_changes:
+    mappings:
+      - source_field: change_id
+        target_field: ecn_id
+        data_type: string
+        rule: identity
+
+      - source_field: product_id
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: change_type
+        target_field: change_type
+        data_type: string
+        rule: identity
+
+      - source_field: request_date
+        target_field: request_date
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: approved_flag
+        target_field: approval_status
+        data_type: string
+        rule: boolean_to_approval_status
+
+  electrolyser_reference:
+    mappings:
+      - source_field: product_id
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: benchmark_efficiency_nm3_per_kwh
+        target_field: benchmark_efficiency_nm3_per_kwh
+        data_type: float
+        rule: identity
+
+      - source_field: rated_power_kw
+        target_field: rated_power_kw
+        data_type: float
+        rule: identity

@@ -1,0 +1,2 @@
+ecn_id,change_title,product_id,revision_from,revision_to,effective_date,approval_status,component_id,change_description,factory_id
+CHG-26-074,Valve seal supplier change,ITM-V320,REV-A,REV-B,2026-10-18,INVALID_STATUS,CMP-SAL-08,Alternate supplier under qualification,FACTORY_B

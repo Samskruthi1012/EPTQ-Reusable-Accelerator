@@ -1,0 +1,100 @@
+2026-11-19 12:45:46,433 - INFO - Starting EPTQ pipeline for FACTORY_A
+2026-11-19 12:45:46,433 - INFO - Processing dataset: machine_logs
+2026-11-19 12:45:46,756 - WARNING - machine_logs: Optional standard fields not present: ['bearing_temp_c', 'hydraulic_pressure_bar', 'product_id', 'product_revision', 'production_order_id', 'vibration_mm_s']
+2026-11-19 12:45:46,757 - WARNING - machine_logs: Unexpected standardized fields: ['source_record_id']
+2026-11-19 12:45:46,763 - INFO - Successfully processed machine_logs. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\machine_logs.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\machine_logs.parquet
+2026-11-19 12:45:46,764 - INFO - Processing dataset: production_orders
+2026-11-19 12:45:46,889 - WARNING - production_orders: Optional standard fields not present: ['bom_id', 'good_quantity', 'machine_id', 'operator_id', 'order_status', 'product_revision', 'rejected_quantity']
+2026-11-19 12:45:46,891 - INFO - Successfully processed production_orders. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\production_orders.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\production_orders.parquet
+2026-11-19 12:45:46,892 - INFO - Processing dataset: downtime_events
+2026-11-19 12:45:46,907 - WARNING - downtime_events: Optional standard fields not present: ['capture_method', 'duration_minutes', 'production_order_id']
+2026-11-19 12:45:46,909 - INFO - Successfully processed downtime_events. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\downtime_events.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\downtime_events.parquet
+2026-11-19 12:45:46,909 - INFO - Processing dataset: bom
+2026-11-19 12:45:46,928 - WARNING - bom: Optional standard fields not present: ['bom_id', 'bom_line_number', 'component_description', 'product_revision', 'unit_of_measure']
+2026-11-19 12:45:46,928 - WARNING - bom: Unexpected standardized fields: ['source_record_id']
+2026-11-19 12:45:46,932 - INFO - Successfully processed bom. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\bom.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\bom.parquet
+2026-11-19 12:45:46,932 - INFO - Processing dataset: product_metadata
+2026-11-19 12:45:46,942 - WARNING - product_metadata: Optional standard fields not present: ['bom_id', 'product_family', 'product_revision', 'unit_of_measure']
+2026-11-19 12:45:46,944 - INFO - Successfully processed product_metadata. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\product_metadata.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\product_metadata.parquet
+2026-11-19 12:45:46,944 - INFO - Processing dataset: engineering_changes
+2026-11-19 12:45:46,958 - WARNING - engineering_changes: Optional standard fields not present: ['change_description', 'change_title', 'component_id', 'effective_date', 'revision_from', 'revision_to']
+2026-11-19 12:45:46,960 - INFO - Successfully processed engineering_changes. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\engineering_changes.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\engineering_changes.parquet
+2026-11-19 12:45:46,960 - INFO - Processing dataset: electrolyser_reference
+2026-11-19 12:45:46,977 - INFO - Successfully processed electrolyser_reference. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\electrolyser_reference.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\electrolyser_reference.parquet
+2026-11-19 12:45:46,977 - INFO - EPTQ pipeline completed for FACTORY_A. Summary: {'factory_id': 'FACTORY_A', 'processed': 7, 'failed': 0, 'skipped': 0, 'valid_records': 4803, 'invalid_records': 0}
+2026-11-19 14:55:44,378 - INFO - Starting EPTQ pipeline for FACTORY_A
+2026-11-19 14:55:44,379 - INFO - Processing dataset: machine_logs
+2026-11-19 14:55:44,423 - ERROR - Failed to process dataset machine_logs: Required mapping source column 'timestamp' not found in dataset 'machine_logs'.
+Traceback (most recent call last):
+  File "D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\src\ingestion\ingestion_engine.py", line 286, in run_ingestion
+    mapped_dataframe = map_dataset(
+        dataframe,
+        mapping_config,
+        dataset_name
+    )
+  File "D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\src\mapping\mapping_engine.py", line 233, in map_dataset
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Required mapping source column 'timestamp' not found in dataset 'machine_logs'.
+2026-11-19 14:55:44,451 - INFO - Processing dataset: bom
+2026-11-19 14:55:44,493 - WARNING - bom: Optional standard fields not present: ['bom_id', 'bom_line_number', 'component_description', 'product_revision', 'unit_of_measure']
+2026-11-19 14:55:44,493 - WARNING - bom: Unexpected standardized fields: ['source_record_id']
+2026-11-19 14:55:44,497 - INFO - Successfully processed bom. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\bom.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\bom.parquet
+2026-11-19 14:55:44,497 - INFO - Processing dataset: product_metadata
+2026-11-19 14:55:44,511 - WARNING - product_metadata: Optional standard fields not present: ['bom_id', 'product_family', 'product_revision', 'unit_of_measure']
+2026-11-19 14:55:44,513 - INFO - Successfully processed product_metadata. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\product_metadata.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\product_metadata.parquet
+2026-11-19 14:55:44,513 - INFO - Processing dataset: engineering_changes
+2026-11-19 14:55:44,546 - WARNING - engineering_changes: Optional standard fields not present: ['change_description', 'change_title', 'component_id', 'effective_date', 'revision_from', 'revision_to']
+2026-11-19 14:55:44,548 - INFO - Successfully processed engineering_changes. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\engineering_changes.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\engineering_changes.parquet
+2026-11-19 14:55:44,549 - INFO - Processing dataset: electrolyser_reference
+2026-11-19 14:55:44,573 - INFO - Successfully processed electrolyser_reference. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\electrolyser_reference.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\electrolyser_reference.parquet
+2026-11-19 14:55:44,573 - INFO - EPTQ pipeline completed for FACTORY_A. Summary: {'factory_id': 'FACTORY_A', 'processed': 4, 'failed': 1, 'skipped': 0, 'valid_records': 1003, 'invalid_records': 0}
+2026-11-19 15:00:17,085 - INFO - Starting EPTQ pipeline for FACTORY_A
+2026-11-19 15:00:17,086 - INFO - Processing dataset: machine_logs
+2026-11-19 15:00:17,272 - WARNING - machine_logs: Optional standard fields not present: ['bearing_temp_c', 'hydraulic_pressure_bar', 'product_id', 'product_revision', 'vibration_mm_s']
+2026-11-19 15:00:17,272 - WARNING - machine_logs: Unexpected standardized fields: ['rejected_quantity', 'source_record_id']
+2026-11-19 15:00:17,281 - INFO - Successfully processed machine_logs. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\machine_logs.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\machine_logs.parquet
+2026-11-19 15:00:17,281 - INFO - Processing dataset: production_orders
+2026-11-19 15:00:17,312 - WARNING - production_orders: Optional standard fields not present: ['bom_id', 'good_quantity', 'operator_id', 'order_status', 'product_revision', 'rejected_quantity']
+2026-11-19 15:00:17,315 - INFO - Successfully processed production_orders. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\production_orders.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\production_orders.parquet
+2026-11-19 15:00:17,315 - INFO - Processing dataset: downtime_events
+2026-11-19 15:00:17,334 - WARNING - downtime_events: Optional standard fields not present: ['capture_method', 'duration_minutes']
+2026-11-19 15:00:17,338 - INFO - Successfully processed downtime_events. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\downtime_events.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\downtime_events.parquet
+2026-11-19 15:00:17,338 - INFO - Processing dataset: bom
+2026-11-19 15:00:17,371 - WARNING - bom: Optional standard fields not present: ['bom_id', 'bom_line_number', 'component_description', 'product_revision', 'unit_of_measure']
+2026-11-19 15:00:17,371 - WARNING - bom: Unexpected standardized fields: ['source_record_id']
+2026-11-19 15:00:17,375 - INFO - Successfully processed bom. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\bom.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\bom.parquet
+2026-11-19 15:00:17,375 - INFO - Processing dataset: product_metadata
+2026-11-19 15:00:17,387 - WARNING - product_metadata: Optional standard fields not present: ['bom_id', 'product_family', 'product_revision', 'unit_of_measure']
+2026-11-19 15:00:17,389 - INFO - Successfully processed product_metadata. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\product_metadata.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\product_metadata.parquet
+2026-11-19 15:00:17,389 - INFO - Processing dataset: engineering_changes
+2026-11-19 15:00:17,405 - WARNING - engineering_changes: Optional standard fields not present: ['change_description', 'change_title', 'component_id', 'effective_date', 'revision_from', 'revision_to']
+2026-11-19 15:00:17,407 - INFO - Successfully processed engineering_changes. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\engineering_changes.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\engineering_changes.parquet
+2026-11-19 15:00:17,407 - INFO - Processing dataset: electrolyser_reference
+2026-11-19 15:00:17,421 - INFO - Successfully processed electrolyser_reference. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\electrolyser_reference.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\electrolyser_reference.parquet
+2026-11-19 15:00:17,421 - INFO - EPTQ pipeline completed for FACTORY_A. Summary: {'factory_id': 'FACTORY_A', 'processed': 7, 'failed': 0, 'skipped': 0, 'valid_records': 4803, 'invalid_records': 0}
+2026-11-19 16:18:56,239 - INFO - Starting EPTQ pipeline for FACTORY_A
+2026-11-19 16:18:56,239 - INFO - Processing dataset: machine_logs
+2026-11-19 16:18:56,567 - WARNING - machine_logs: Optional standard fields not present: ['bearing_temp_c', 'hydraulic_pressure_bar', 'product_id', 'product_revision', 'vibration_mm_s']
+2026-11-19 16:18:56,568 - WARNING - machine_logs: Unexpected standardized fields: ['rejected_quantity', 'source_record_id']
+2026-11-19 16:18:56,584 - INFO - Successfully processed machine_logs. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\machine_logs.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\machine_logs.parquet
+2026-11-19 16:18:56,584 - INFO - Processing dataset: production_orders
+2026-11-19 16:18:56,661 - WARNING - production_orders: Optional standard fields not present: ['bom_id', 'good_quantity', 'operator_id', 'order_status', 'product_revision', 'rejected_quantity']
+2026-11-19 16:18:56,668 - INFO - Successfully processed production_orders. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\production_orders.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\production_orders.parquet
+2026-11-19 16:18:56,668 - INFO - Processing dataset: downtime_events
+2026-11-19 16:18:56,771 - WARNING - downtime_events: Optional standard fields not present: ['capture_method', 'duration_minutes']
+2026-11-19 16:18:56,779 - INFO - Successfully processed downtime_events. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\downtime_events.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\downtime_events.parquet
+2026-11-19 16:18:56,780 - INFO - Processing dataset: bom
+2026-11-19 16:18:56,878 - WARNING - bom: Optional standard fields not present: ['bom_id', 'bom_line_number', 'component_description', 'product_revision', 'unit_of_measure']
+2026-11-19 16:18:56,878 - WARNING - bom: Unexpected standardized fields: ['source_record_id']
+2026-11-19 16:18:56,889 - INFO - Successfully processed bom. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\bom.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\bom.parquet
+2026-11-19 16:18:56,889 - INFO - Processing dataset: product_metadata
+2026-11-19 16:18:56,929 - WARNING - product_metadata: Optional standard fields not present: ['bom_id', 'product_family', 'product_revision', 'unit_of_measure']
+2026-11-19 16:18:56,935 - INFO - Successfully processed product_metadata. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\product_metadata.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\product_metadata.parquet
+2026-11-19 16:18:56,935 - INFO - Processing dataset: engineering_changes
+2026-11-19 16:18:56,991 - WARNING - engineering_changes: Optional standard fields not present: ['change_description', 'change_title', 'component_id', 'effective_date', 'revision_from', 'revision_to']
+2026-11-19 16:18:56,997 - INFO - Successfully processed engineering_changes. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\engineering_changes.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\engineering_changes.parquet
+2026-11-19 16:18:56,997 - INFO - Processing dataset: electrolyser_reference
+2026-11-19 16:18:57,043 - INFO - Successfully processed electrolyser_reference. Raw: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\landing\FACTORY_A\electrolyser_reference.parquet, Standardized: D:\EPTQ_KPI_Refactored_Repository_v2\kpi_work\data\standardized\FACTORY_A\electrolyser_reference.parquet
+2026-11-19 16:18:57,043 - INFO - EPTQ pipeline completed for FACTORY_A. Summary: {'factory_id': 'FACTORY_A', 'processed': 7, 'failed': 0, 'skipped': 0, 'valid_records': 4803, 'invalid_records': 0}

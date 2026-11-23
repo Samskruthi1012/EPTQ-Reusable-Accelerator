@@ -1,0 +1,4 @@
+production_order_id,product_id,product_revision,bom_id,start_time,end_time,machine_id,operator_id,planned_quantity,good_quantity,rejected_quantity,order_status,factory_id
+WO-B-0001,ITM-A210,REV-B,BOM-P210-B,2026-09-08 06:00:00,2026-09-08 12:47:00,MC-14,OP-214,120,113,7,CLOSED,FACTORY_B
+WO-B-0001,ITM-A220,REV-A,BOM-P220-A,2026-09-08 08:00:00,2026-09-08 15:27:00,MC-24,OP-207,135,133,2,CLOSED,FACTORY_B
+WO-B-0003,,REV-C,BOM-V310-C,2026-09-08 10:00:00,2026-09-08 16:55:00,MC-14,OP-201,150,146,4,CLOSED,FACTORY_B

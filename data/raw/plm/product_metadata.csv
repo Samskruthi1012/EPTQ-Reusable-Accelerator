@@ -1,0 +1,101 @@
+product_id,product_name,design_release_date,CAD_file_ref
+PROD-001,Widget Alpha,2026-08-08,widget_alpha_v1.step
+PROD-002,Widget Beta,2024-05-09,widget_beta_v1.step
+PROD-003,Widget Gamma,2023-12-27,widget_gamma_v1.step
+PROD-004,Widget Delta,2025-01-19,widget_delta_v1.step
+PROD-005,Gear Assembly,2024-12-03,gear_assembly_v1.step
+PROD-006,Drive Shaft,2024-10-30,drive_shaft_v1.step
+PROD-007,Bearing Housing,2024-06-22,bearing_housing_v1.step
+PROD-008,Brake Disc,2024-04-26,brake_disc_v1.step
+PROD-009,Clutch Plate,2026-10-05,clutch_plate_v1.step
+PROD-010,Engine Block,2026-03-15,engine_block_v1.step
+PROD-011,Cylinder Head,2024-04-02,cylinder_head_v1.step
+PROD-012,Axle Shaft,2026-05-24,axle_shaft_v1.step
+PROD-013,Pulley Wheel,2025-09-04,pulley_wheel_v1.step
+PROD-014,Rotor Assembly,2024-01-07,rotor_assembly_v1.step
+PROD-015,Stator Unit,2024-01-04,stator_unit_v1.step
+PROD-016,Control Panel,2024-04-12,control_panel_v1.step
+PROD-017,Hydraulic Pump,2024-10-23,hydraulic_pump_v1.step
+PROD-018,Valve Body,2024-11-14,valve_body_v1.step
+PROD-019,Roller Bearing,2026-01-12,roller_bearing_v1.step
+PROD-020,Flexible Coupling,2026-06-11,flexible_coupling_v1.step
+PROD-021,Flywheel,2023-12-30,flywheel_v1.step
+PROD-022,Crankshaft,2026-04-08,crankshaft_v1.step
+PROD-023,Piston Kit,2024-09-22,piston_kit_v1.step
+PROD-024,Camshaft,2026-08-24,camshaft_v1.step
+PROD-025,Oil Pump,2026-11-12,oil_pump_v1.step
+PROD-026,Fuel Injector,2026-03-14,fuel_injector_v1.step
+PROD-027,Timing Belt,2025-08-31,timing_belt_v1.step
+PROD-028,Cooling Fan,2024-10-26,cooling_fan_v1.step
+PROD-029,Radiator,2025-10-16,radiator_v1.step
+PROD-030,Air Filter,2026-05-22,air_filter_v1.step
+PROD-031,Exhaust Manifold,2025-01-24,exhaust_manifold_v1.step
+PROD-032,Turbocharger,2023-11-29,turbocharger_v1.step
+PROD-033,Starter Motor,2024-07-24,starter_motor_v1.step
+PROD-034,Alternator,2026-11-07,alternator_v1.step
+PROD-035,Wheel Hub,2025-09-05,wheel_hub_v1.step
+PROD-036,Steering Knuckle,2025-04-30,steering_knuckle_v1.step
+PROD-037,Suspension Arm,2025-01-23,suspension_arm_v1.step
+PROD-038,Brake Caliper,2024-07-17,brake_caliper_v1.step
+PROD-039,Shock Absorber,2024-10-18,shock_absorber_v1.step
+PROD-040,Transmission Case,2025-04-24,transmission_case_v1.step
+PROD-041,Differential Gear,2024-04-25,differential_gear_v1.step
+PROD-042,Planetary Gear,2024-04-11,planetary_gear_v1.step
+PROD-043,Universal Joint,2025-07-01,universal_joint_v1.step
+PROD-044,Seal Ring,2024-04-17,seal_ring_v1.step
+PROD-045,O-Ring,2025-05-29,o-ring_v1.step
+PROD-046,Mounting Flange,2025-05-06,mounting_flange_v1.step
+PROD-047,Fastener Kit,2026-06-13,fastener_kit_v1.step
+PROD-048,Hex Bolt,2025-01-02,hex_bolt_v1.step
+PROD-049,Lock Nut,2024-01-25,lock_nut_v1.step
+PROD-050,Flat Washer,2025-11-01,flat_washer_v1.step
+PROD-051,Chain Sprocket,2026-03-01,chain_sprocket_v1.step
+PROD-052,Roller Chain,2024-05-30,roller_chain_v1.step
+PROD-053,Linear Guide,2025-06-29,linear_guide_v1.step
+PROD-054,Servo Motor,2024-03-20,servo_motor_v1.step
+PROD-055,Stepper Motor,2026-03-25,stepper_motor_v1.step
+PROD-056,PLC Module,2025-02-16,plc_module_v1.step
+PROD-057,Sensor Module,2026-07-22,sensor_module_v1.step
+PROD-058,Pressure Sensor,2026-07-06,pressure_sensor_v1.step
+PROD-059,Temperature Sensor,2025-06-02,temperature_sensor_v1.step
+PROD-060,Flow Meter,2026-05-03,flow_meter_v1.step
+PROD-061,Solenoid Valve,2024-09-12,solenoid_valve_v1.step
+PROD-062,Electric Actuator,2026-11-17,electric_actuator_v1.step
+PROD-063,Control Valve,2024-03-06,control_valve_v1.step
+PROD-064,Hydraulic Cylinder,2024-01-29,hydraulic_cylinder_v1.step
+PROD-065,Pneumatic Cylinder,2026-09-11,pneumatic_cylinder_v1.step
+PROD-066,Air Compressor,2024-11-07,air_compressor_v1.step
+PROD-067,Vacuum Pump,2025-02-10,vacuum_pump_v1.step
+PROD-068,Heat Exchanger,2024-03-21,heat_exchanger_v1.step
+PROD-069,Boiler Tube,2024-11-14,boiler_tube_v1.step
+PROD-070,Conveyor Roller,2024-04-23,conveyor_roller_v1.step
+PROD-071,Conveyor Belt,2025-07-01,conveyor_belt_v1.step
+PROD-072,Mixer Blade,2025-01-23,mixer_blade_v1.step
+PROD-073,Impeller,2025-10-23,impeller_v1.step
+PROD-074,Filter Housing,2026-08-02,filter_housing_v1.step
+PROD-075,Spray Nozzle,2025-06-07,spray_nozzle_v1.step
+PROD-076,Manifold Block,2024-07-28,manifold_block_v1.step
+PROD-077,Electrical Connector,2025-06-16,electrical_connector_v1.step
+PROD-078,Terminal Block,2025-05-23,terminal_block_v1.step
+PROD-079,Fuse Box,2024-10-09,fuse_box_v1.step
+PROD-080,Power Supply Unit,2026-09-25,power_supply_unit_v1.step
+PROD-081,Transformer Core,2025-01-06,transformer_core_v1.step
+PROD-082,Cooling Jacket,2026-11-13,cooling_jacket_v1.step
+PROD-083,Fan Blade,2026-10-15,fan_blade_v1.step
+PROD-084,Motor Shaft,2026-08-21,motor_shaft_v1.step
+PROD-085,Housing Cover,2024-03-08,housing_cover_v1.step
+PROD-086,Gear Wheel,2026-06-22,gear_wheel_v1.step
+PROD-087,Rack Gear,2026-08-01,rack_gear_v1.step
+PROD-088,Pinion Gear,2024-08-10,pinion_gear_v1.step
+PROD-089,Support Bracket,2026-02-25,support_bracket_v1.step
+PROD-090,Mounting Plate,2024-12-03,mounting_plate_v1.step
+PROD-091,Pipe Clamp,2024-07-29,pipe_clamp_v1.step
+PROD-092,Door Frame,2025-11-06,door_frame_v1.step
+PROD-093,Chassis Frame,2025-06-30,chassis_frame_v1.step
+PROD-094,Base Plate,2025-01-11,base_plate_v1.step
+PROD-095,Machine Guard,2026-08-09,machine_guard_v1.step
+PROD-096,Inspection Cover,2026-10-23,inspection_cover_v1.step
+PROD-097,Lubrication Unit,2026-04-02,lubrication_unit_v1.step
+PROD-098,Tool Holder,2024-10-25,tool_holder_v1.step
+PROD-099,Cutting Head,2026-10-17,cutting_head_v1.step
+PROD-100,Spindle Assembly,2025-04-05,spindle_assembly_v1.step

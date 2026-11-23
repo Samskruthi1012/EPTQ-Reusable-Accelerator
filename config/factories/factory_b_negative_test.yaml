@@ -1,0 +1,120 @@
+
+#This tells our system where Factory B's datasets are located and what formats they use.
+factory:
+  factory_id: "FACTORY_B"
+  factory_name: "Factory B"
+  description: "Factory B EPTQ refactoring validation dataset"
+
+mapping_config: "config/mappings/factory_b_mapping.yaml"
+
+source:
+  root_path: "data/temp_scenario1_negative/FACTORY_B_SOURCE"
+  file_format: "csv"
+
+output:
+  landing_path: "data/temp_scenario1_negative/landing"
+  error_path: "data/temp_scenario1_negative/errors"
+  standardized_path: "data/temp_scenario1_negative/standardized"
+
+datasets:
+
+  product_metadata:
+    source_file: "product_master.csv"
+    required_columns:
+      - item_code
+      - item_description
+      - current_revision
+      - bom_reference
+      - product_family
+      - uom
+
+  bom:
+    source_file: "bom_structure.csv"
+    required_columns:
+      - bom_no
+      - parent_item
+      - revision_code
+      - line_no
+      - component_code
+      - component_description
+      - qty_per
+      - component_uom
+
+  engineering_changes:
+    source_file: "engineering_changes.csv"
+    required_columns:
+      - change_notice_id
+      - change_title
+      - affected_item
+      - revision_from
+      - revision_to
+      - effective_on
+      - approval_status
+      - affected_component
+      - change_summary
+
+  production_orders:
+    source_file: "production_jobs.csv"
+    required_columns:
+      - work_order_no
+      - material_code
+      - item_revision
+      - bom_used
+      - actual_start_ts
+      - actual_end_ts
+      - asset_number
+      - planned_qty
+      - good_qty
+      - reject_qty
+      - order_status
+
+  machine_logs:
+    source_file: "asset_telemetry.csv"
+    required_columns:
+      - asset_id
+      - event_time
+      - job_ref
+      - item_ref
+      - rev_ref
+      - bearing_temp_c
+      - vibration_mm_s
+      - hydraulic_pressure_bar
+      - machine_state
+
+  downtime_events:
+    source_file: "stoppage_records.csv"
+    required_columns:
+      - stoppage_id
+      - asset_no
+      - work_order_ref
+      - stop_start
+      - stop_end
+      - duration_min
+      - reason_code
+      - capture_method
+
+  quality_events:
+    source_file: "quality_inspections.csv"
+    required_columns:
+      - inspection_id
+      - job_number
+      - part_number
+      - part_revision
+      - equipment_id
+      - inspection_time
+      - sample_size
+      - defect_count
+      - disposition
+      - finished_lot_no
+    optional_columns:
+      - defect_category
+      - ncr_reference
+
+acceptance_tests:
+  expected_results_file: "expected_results.csv"
+  field_mapping_file: "field_mapping.csv"
+  pending_ecn_rule:
+    ecn_id: "CHG-26-074"
+    expected_status: "PENDING"
+    must_affect_traceability: false
+

@@ -1,0 +1,3 @@
+quality_event_id,production_order_id,product_id,product_revision,machine_id,inspection_time,sample_size,defect_count,disposition,defect_category,finished_lot_id,ncr_id,factory_id
+QI-B-0001,WO-B-0001,ITM-A210,REV-B,MC-14,2026-09-08 14:47:00,50,2,PASS,ASSEMBLY_MISALIGN,LOT-0001,,FACTORY_B
+QI-B-0001,WO-B-0002,ITM-A220,REV-A,MC-24,2026-09-08 17:27:00,50,1,PASS,LEAK_TEST_FAIL,LOT-0002,,FACTORY_B

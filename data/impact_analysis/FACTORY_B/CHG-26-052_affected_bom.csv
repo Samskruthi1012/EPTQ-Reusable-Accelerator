@@ -1,0 +1,2 @@
+bom_id,product_id,product_revision,bom_line_number,component_id,component_description,quantity,unit_of_measure,source_record_id,factory_id
+BOM-V310-D,ITM-V310,REV-D,20,CMP-SPR-12,Spring,1.0,EA,cc7097688cf59eee07aae10cf6f6122e70393ea980077c061d480ff854354e4c,FACTORY_B

@@ -1,0 +1,193 @@
+
+version: "0.1"
+
+entities:
+
+  factory:
+    primary_key: [factory_id]
+    fields:
+      - factory_id
+      - factory_name
+
+  product:
+    primary_key: [factory_id, product_id]
+    fields:
+      - factory_id
+      - product_id
+      - product_name
+      - product_family
+      - unit_of_measure
+      - design_release_date
+      - cad_file_reference
+      - product_revision
+      - bom_id
+
+  product_revision:
+    primary_key: [factory_id, product_id, product_revision]
+    fields:
+      - factory_id
+      - product_id
+      - product_revision
+      - bom_id
+      - effective_from
+      - effective_to
+
+  engineering_change:
+    primary_key: [factory_id, ecn_id]
+    fields:
+      - factory_id
+      - ecn_id
+      - product_id
+      - revision_from
+      - revision_to
+      - effective_date
+      - request_date
+      - approval_status
+      - component_id
+      - change_type
+      - change_title
+      - change_description
+
+  bom:
+    primary_key: [factory_id, bom_id]
+    fields:
+      - factory_id
+      - bom_id
+      - product_id
+      - product_revision
+
+  bom_component:
+    primary_key: [factory_id, source_record_id]
+    fields:
+      - factory_id
+      - source_record_id
+      - bom_id
+      - product_id
+      - product_revision
+      - component_id
+      - component_description
+      - component_revision
+      - quantity
+      - unit_of_measure
+      - bom_line_number
+# For BOM : Stores individual component rows belonging to a product BOM.
+# Uses a factory-specific record ID to uniquely identify each BOM row.
+# Keeps bom_id optional because not every factory provides it.
+# Preserves product, component, revision and quantity information.
+# Retains source-specific BOM line numbers when available.
+
+  production_order:
+    primary_key: [factory_id, production_order_id]
+    fields:
+      - factory_id
+      - production_order_id
+      - product_id
+      - product_revision
+      - bom_id
+      - machine_id
+      - start_time
+      - end_time
+      - planned_quantity
+      - actual_quantity
+      - good_quantity
+      - rejected_quantity
+      - order_status
+      - operator_id
+
+  machine:
+    primary_key: [factory_id, machine_id]
+    fields:
+      - factory_id
+      - machine_id
+
+  machine_event:
+    primary_key: [factory_id, source_record_id]
+    fields:
+      - factory_id
+      - source_record_id
+      - machine_id
+      - production_order_id
+      - product_id
+      - product_revision
+      - event_timestamp
+      - machine_state
+      - cycle_time_ms
+      - output_count
+      - defect_flag
+      - bearing_temp_c
+      - vibration_mm_s
+      - hydraulic_pressure_bar
+
+  downtime_event:
+    primary_key: [factory_id, downtime_event_id]
+    fields:
+      - factory_id
+      - downtime_event_id
+      - machine_id
+      - production_order_id
+      - start_time
+      - end_time
+      - downtime_reason
+      - duration_minutes
+      - capture_method
+
+  finished_lot:
+    primary_key: [factory_id, finished_lot_id]
+    fields:
+      - factory_id
+      - finished_lot_id
+      - production_order_id
+      - product_id
+      - product_revision
+
+  quality_event:
+    primary_key: [factory_id, quality_event_id]
+    fields:
+      - factory_id
+      - quality_event_id
+      - finished_lot_id
+      - production_order_id
+      - product_id
+      - product_revision
+      - machine_id
+      - inspection_time
+      - sample_size
+      - defect_count
+      - disposition
+      - defect_category
+      - ncr_id
+
+  ncr:
+    primary_key: [factory_id, ncr_id]
+    fields:
+      - factory_id
+      - ncr_id
+
+  capa:
+    primary_key: [factory_id, capa_id]
+    fields:
+      - factory_id
+      - capa_id
+      - ncr_id
+
+  electrolyser_reference:
+    primary_key: [factory_id, product_id]
+    fields:
+      - factory_id
+      - product_id
+      - benchmark_efficiency_nm3_per_kwh
+      - rated_power_kw
+
+
+# Defines the common data model used across all factories.
+# Lists the manufacturing entities required for EPTQ traceability.
+# Defines primary keys to uniquely identify records within each factory.
+# Defines the standard fields available for every entity.
+# Connects engineering changes with products and product revisions.
+# Connects products, BOMs and their components.
+# Connects production orders with machines and manufacturing data.
+# Connects finished lots with production and quality events.
+# Stores quality events, defects and non-conformance references.
+# Supports factory-specific data through factory_id.
+# Allows optional entities and fields when a factory does not provide them.
+# Preserves OEE benchmark data through the electrolyser_reference entity.

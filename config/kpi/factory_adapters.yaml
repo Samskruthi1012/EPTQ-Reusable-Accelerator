@@ -1,0 +1,28 @@
+# Factory-to-adapter registry. Add a factory here and provide an adapter module
+# that implements build_kpi_inputs(**configured_inputs, resolver=resolver).
+version: 1
+factories:
+  FACTORY_A:
+    adapter_module: src.transform.adapters.factory_a_adapter
+    input_datasets:
+      orders:
+        file: production_orders.parquet
+        required: true
+      logs:
+        file: machine_logs.parquet
+        required: true
+      downtime:
+        file: downtime_events.parquet
+        required: true
+      reference:
+        file: electrolyser_reference.parquet
+        required: false
+  FACTORY_B:
+    adapter_module: src.transform.adapters.factory_b_adapter
+    input_datasets:
+      orders:
+        file: production_orders.parquet
+        required: true
+      downtime:
+        file: downtime_events.parquet
+        required: true

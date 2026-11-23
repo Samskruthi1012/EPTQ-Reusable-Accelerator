@@ -1,0 +1,5 @@
+change_notice_id,change_title,affected_item,revision_from,revision_to,effective_on,approval_status,affected_component,change_summary
+CHG-26-041,Pump seal material change,ITM-A210,REV-B,REV-C,2026-09-15,APPROVED,CMP-SAL-07,EPDM to FKM seal for temperature stability
+CHG-26-052,Valve spring stiffness adjustment,ITM-V310,REV-C,REV-D,2026-09-22,APPROVED,CMP-SPR-12,Increase spring stiffness to reduce response drift
+CHG-26-061,Pump housing machining tolerance update,ITM-A220,REV-A,REV-B,2026-10-03,APPROVED,CMP-HSG-02,Tighten bore tolerance by 0.02 mm
+CHG-26-074,Valve seal supplier change,ITM-V320,REV-A,REV-B,2026-10-18,PENDING,CMP-SAL-08,Alternate supplier under qualification

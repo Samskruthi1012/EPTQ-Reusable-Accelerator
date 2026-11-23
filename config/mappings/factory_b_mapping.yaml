@@ -1,0 +1,354 @@
+#This tells the mapping engine how Factory B's columns correspond to standard EPTQ fields.
+factory_id: "FACTORY_B"
+
+datasets:
+
+  product_metadata:
+    mappings:
+      - source_field: item_code
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: item_description
+        target_field: product_name
+        data_type: string
+        rule: identity
+
+      - source_field: current_revision
+        target_field: product_revision
+        data_type: string
+        rule: identity
+
+      - source_field: bom_reference
+        target_field: bom_id
+        data_type: string
+        rule: identity
+
+      - source_field: product_family
+        target_field: product_family
+        data_type: string
+        rule: identity
+
+      - source_field: uom
+        target_field: unit_of_measure
+        data_type: string
+        rule: identity
+
+  bom:
+    mappings:
+      - source_field: bom_no
+        target_field: bom_id
+        data_type: string
+        rule: identity
+
+      - source_field: parent_item
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: revision_code
+        target_field: product_revision
+        data_type: string
+        rule: identity
+
+      - source_field: line_no
+        target_field: bom_line_number
+        data_type: integer
+        rule: identity
+
+      - source_field: component_code
+        target_field: component_id
+        data_type: string
+        rule: identity
+
+      - source_field: component_description
+        target_field: component_description
+        data_type: string
+        rule: identity
+
+      - source_field: qty_per
+        target_field: quantity
+        data_type: float
+        rule: identity
+
+      - source_field: component_uom
+        target_field: unit_of_measure
+        data_type: string
+        rule: identity
+
+    generated_fields:
+      - target_field: source_record_id
+        rule: deterministic_row_id
+#(Why these changes?
+# - bom_id preserves Factory B's original BOM identifier.
+# - source_record_id uniquely identifies each BOM component record.
+# - line_no is converted into an integer.
+# - revision_code remains mapped to product_revision; we should verify its exact business meaning before changing it to component_revision.)
+  engineering_changes:
+    mappings:
+      - source_field: change_notice_id
+        target_field: ecn_id
+        data_type: string
+        rule: identity
+
+      - source_field: change_title
+        target_field: change_title
+        data_type: string
+        rule: identity
+
+      - source_field: affected_item
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: revision_from
+        target_field: revision_from
+        data_type: string
+        rule: identity
+
+      - source_field: revision_to
+        target_field: revision_to
+        data_type: string
+        rule: identity
+
+      - source_field: effective_on
+        target_field: effective_date
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: approval_status
+        target_field: approval_status
+        data_type: string
+        rule: normalize_approval_status
+
+      - source_field: affected_component
+        target_field: component_id
+        data_type: string
+        rule: identity
+
+      - source_field: change_summary
+        target_field: change_description
+        data_type: string
+        rule: identity
+
+  production_orders:
+    mappings:
+      - source_field: work_order_no
+        target_field: production_order_id
+        data_type: string
+        rule: identity
+
+      - source_field: material_code
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: item_revision
+        target_field: product_revision
+        data_type: string
+        rule: identity
+
+      - source_field: bom_used
+        target_field: bom_id
+        data_type: string
+        rule: identity
+
+      - source_field: actual_start_ts
+        target_field: start_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: actual_end_ts
+        target_field: end_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: asset_number
+        target_field: machine_id
+        data_type: string
+        rule: identity
+
+      - source_field: operator_badge
+        target_field: operator_id
+        data_type: string
+        rule: identity
+
+      - source_field: planned_qty
+        target_field: planned_quantity
+        data_type: integer
+        rule: identity
+
+      - source_field: good_qty
+        target_field: good_quantity
+        data_type: integer
+        rule: identity
+
+      - source_field: reject_qty
+        target_field: rejected_quantity
+        data_type: integer
+        rule: identity
+
+      - source_field: order_status
+        target_field: order_status
+        data_type: string
+        rule: identity
+
+  machine_logs:
+    mappings:
+      - source_field: asset_id
+        target_field: machine_id
+        data_type: string
+        rule: identity
+
+      - source_field: event_time
+        target_field: event_timestamp
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: job_ref
+        target_field: production_order_id
+        data_type: string
+        rule: identity
+
+      - source_field: item_ref
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: rev_ref
+        target_field: product_revision
+        data_type: string
+        rule: identity
+
+      - source_field: bearing_temp_c
+        target_field: bearing_temp_c
+        data_type: float
+        rule: identity
+
+      - source_field: vibration_mm_s
+        target_field: vibration_mm_s
+        data_type: float
+        rule: identity
+
+      - source_field: hydraulic_pressure_bar
+        target_field: hydraulic_pressure_bar
+        data_type: float
+        rule: identity
+
+      - source_field: machine_state
+        target_field: machine_state
+        data_type: string
+        rule: identity
+
+    generated_fields:
+      - target_field: source_record_id
+        rule: deterministic_row_id
+
+  downtime_events:
+    mappings:
+      - source_field: stoppage_id
+        target_field: downtime_event_id
+        data_type: string
+        rule: identity
+
+      - source_field: asset_no
+        target_field: machine_id
+        data_type: string
+        rule: identity
+
+      - source_field: work_order_ref
+        target_field: production_order_id
+        data_type: string
+        rule: identity
+
+      - source_field: stop_start
+        target_field: start_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: stop_end
+        target_field: end_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: duration_min
+        target_field: duration_minutes
+        data_type: float
+        rule: identity
+
+      - source_field: reason_code
+        target_field: downtime_reason
+        data_type: string
+        rule: identity
+
+      - source_field: capture_method
+        target_field: capture_method
+        data_type: string
+        rule: identity
+
+  quality_events:
+    mappings:
+      - source_field: inspection_id
+        target_field: quality_event_id
+        data_type: string
+        rule: identity
+
+      - source_field: job_number
+        target_field: production_order_id
+        data_type: string
+        rule: identity
+
+      - source_field: part_number
+        target_field: product_id
+        data_type: string
+        rule: identity
+
+      - source_field: part_revision
+        target_field: product_revision
+        data_type: string
+        rule: identity
+
+      - source_field: equipment_id
+        target_field: machine_id
+        data_type: string
+        rule: identity
+
+      - source_field: inspection_time
+        target_field: inspection_time
+        data_type: datetime
+        rule: parse_datetime
+
+      - source_field: sample_size
+        target_field: sample_size
+        data_type: integer
+        rule: identity
+
+      - source_field: defect_count
+        target_field: defect_count
+        data_type: integer
+        rule: identity
+
+      - source_field: disposition
+        target_field: disposition
+        data_type: string
+        rule: identity
+
+      - source_field: defect_category
+        target_field: defect_category
+        data_type: string
+        rule: identity
+
+      - source_field: finished_lot_no
+        target_field: finished_lot_id
+        data_type: string
+        rule: identity
+
+      - source_field: ncr_reference
+        target_field: ncr_id
+        data_type: string
+        rule: identity
+
+    optional_fields:
+      - defect_category
+      - ncr_reference
